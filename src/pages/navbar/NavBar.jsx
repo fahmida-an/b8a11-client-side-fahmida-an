@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiMenu , BiSolidUpArrow, BiSolidDownArrow} from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const NavBar = () => {
+  const {user,logOut} = useContext(AuthContext)
     const [open, setOpen] = useState(false);
     const [on, setOn] = useState(false);
+
+    const handleLogout = () => {
+      logOut()
+      .then(result => console.log(result))
+      .catch(error => console.log(error))
+    }
     return (
       <nav className="bg-neutral1">
         <div className="flex items-center font-medium justify-around">
@@ -29,10 +37,9 @@ const NavBar = () => {
               </Link>
             </li>
            
-            {/* for private user */}
-            <li
-              onClick={() => setOn(!on)}
-              className="py-7 px-3 inline-block cursor-pointer relative "
+            { user?.email ? <>
+                <li onClick={() => setOn(!on)}
+                className="py-7 px-3 inline-block cursor-pointer relative "
             >
               <div className="flex items-center space-x-2">
                 <span>Dashboard</span>
@@ -59,14 +66,23 @@ const NavBar = () => {
                 </div>
               )}
             </li>
-           
-          </ul>
-  
-          <div className="md:block hidden">
+            <div>
+            {user.displayName}
+            <button onClick={handleLogout} className="text-white bg-gradient-to-r from-zinc1 via-zinc2 to-zinc4 hover:bg-gradient-to-br outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Log Out</button>
+            </div>
+              </>
+            :
+            <div className="md:block hidden">
           <Link to={'/register'}>
           <button className="text-white bg-gradient-to-r from-zinc1 via-zinc2 to-zinc4 hover:bg-gradient-to-br outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Login</button>
           </Link>
           </div>
+              
+            }
+                   
+          </ul>
+  
+          
           {/* mobile nav  */}
   
           <div
