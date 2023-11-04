@@ -136,7 +136,6 @@ const Register = () => {
           Login here
         </Link>
       </p>
-      <Toaster />
     </div>
   );
 };
