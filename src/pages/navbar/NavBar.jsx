@@ -63,7 +63,7 @@ const NavBar = () => {
           </ul>
   
           <div className="md:block hidden">
-          <Link to={'/login'}>
+          <Link to={'/register'}>
           <button className="text-white bg-gradient-to-r from-zinc1 via-zinc2 to-zinc4 hover:bg-gradient-to-br outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Login</button>
           </Link>
           </div>
