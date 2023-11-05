@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const AddService = () => {
 
     const handleAddServices = event => {
@@ -14,21 +16,31 @@ const AddService = () => {
 
         // send services to server
 
-        fetch('http://localhost:4000/services', {
-            method: "POST",
-            headers: {
-                "content-type" : "application/json"
-            },
-            body: JSON.stringify(newService)
-        })
-        .then(res => res.json())
+        axios.post('http://localhost:4000/services', newService)
         .then(data => {
-            console.log(data);
-            // if(data.insertedId > 0){
-            //     alert('Success');
-            //   }
-            form.reset();
+          console.log(data.data);
+          if(data.data.insertedId){
+            console.log('data added');
+            
+          }
+          
         })
+
+        // fetch('http://localhost:4000/services', {
+        //     method: "POST",
+        //     headers: {
+        //         "content-type" : "application/json"
+        //     },
+        //     body: JSON.stringify(newService)
+        // })
+        // .then(res => res.json())
+        // .then(data => {
+        //     console.log(data);
+        //     // if(data.insertedId > 0){
+        //     //     alert('Success');
+        //     //   }
+        //     form.reset();
+        // })
 
     }
     return (
@@ -45,7 +57,8 @@ const AddService = () => {
                 type="text"
                 name="image"
                 placeholder="Service Image"
-                className="input input-bordered text-sm w-full "
+                className="input input-bordered text-sm w-full"
+                required
               />
             </label>
           </div>
@@ -59,6 +72,7 @@ const AddService = () => {
                 name="name"
                 placeholder="Service name"
                 className="input input-bordered text-sm w-full"
+                required
               />
             </label>
           </div>
@@ -74,6 +88,7 @@ const AddService = () => {
                 name="price"
                 placeholder="Service price"
                 className="input input-bordered text-sm w-full"
+                required
               />
             </label>
           </div>
@@ -87,6 +102,7 @@ const AddService = () => {
                 name="providerName"
                 placeholder="Provider Name"
                 className="input input-bordered text-sm w-full"
+                required
               />
             </label>
           </div>
@@ -101,6 +117,7 @@ const AddService = () => {
                 name="providerImage"
                 placeholder="Provider Image"
                 className="input input-bordered text-sm w-full"
+                required
               />
             </label>
           </div>
@@ -114,6 +131,7 @@ const AddService = () => {
                 name="details"
                 placeholder="Details"
                 className="input input-bordered text-sm w-full"
+                required
               />
             </label>
           </div>

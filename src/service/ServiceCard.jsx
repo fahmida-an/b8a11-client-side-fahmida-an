@@ -13,7 +13,7 @@ const ServiceCard = ({ service }) => {
   } = service;
   return (
     <>
-      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-8">
+      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-8 hover:transition-shadow hover:bg-red1 hover:translate-y-3 hover:shadow-2xl">
         <a href="#">
           <img className="rounded-t-lg w-full h-[200px]" src={serviceImage} alt="" />
         </a>
@@ -23,16 +23,20 @@ const ServiceCard = ({ service }) => {
           </h5>
 
           {details?.length > 200 ? (
-            <p>
+            <p className="">
               {details.slice(0, 200)}
 
-              <Link className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
+              <Link className="text-blue-600 ml-1">
+                Read more...
               </Link>
             </p>
           ) : (
             <p>{details}</p>
           )}
+
+          <div className="items-end justify-end text-end">
+          <button className="text-white bg-gradient-to-r from-zinc1 via-zinc2 to-zinc4 hover:bg-gradient-to-br outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><Link to={`/services/${_id}`}>View details</Link></button>
+          </div>
         </div>
       </div>
     </>
