@@ -59,7 +59,7 @@ const NavBar = () => {
                     </Link>
                   </li>
                   <li className=" p-2 hover:bg-zinc">
-                    <Link to={"/mySchedules"} className="">
+                    <Link to={"/bookServices"} className="">
                       My Schedules
                     </Link>
                   </li>
