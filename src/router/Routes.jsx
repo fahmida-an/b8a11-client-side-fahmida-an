@@ -7,7 +7,9 @@ import AddService from "../service/AddService";
 import AllServices from "../service/AllServices";
 import ServiceDetails from "../service/ServiceDetails";
 import CheckOut from "../pages/CheckOut/CheckOut";
-import BookService from "../pages/BookService/BookService";
+import BookService from "../BookService/BookService";
+import AllBookService from "../AllBookService/AllBookService";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = new createBrowserRouter([
   {
@@ -36,7 +38,7 @@ const router = new createBrowserRouter([
       },
       {
         path: "/services/:id",
-        element: <ServiceDetails></ServiceDetails>
+        element: <PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>
       },
       {
         path: "/checkOut/:id",
@@ -44,7 +46,11 @@ const router = new createBrowserRouter([
       },
       {
         path: "/bookServices",
-        element: <BookService></BookService>
+        element: <PrivateRoutes><BookService></BookService></PrivateRoutes>
+      },
+      {
+        path: "/myServices",
+        element: <PrivateRoutes><AllBookService></AllBookService></PrivateRoutes>
       }
     ],
   },

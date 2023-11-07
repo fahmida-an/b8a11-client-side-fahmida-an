@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import axios from "axios";
 
 const Login = () => {
     const {logInUser} = useContext(AuthContext)
     const [loginError, setLoginError] = useState()
+    const location = useLocation();
     const navigate = useNavigate();
     const handleLogin = e => {
         e.preventDefault();
@@ -14,9 +16,18 @@ const Login = () => {
         console.log(email, password);
 
         logInUser(email, password)
-        .then(res => {
-            console.log(res);
-            navigate('/')
+        .then(result => {
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            const user = {email};
+      
+            axios.post('http://localhost:4000/jwt', user, {withCredentials: true})
+            .then(res => {
+              console.log(res.data);
+              if(res.data.success){
+                navigate( location?.state ? location.state : '/')
+              }
+            })
         })
         .catch(error => {
             setLoginError(error.message);
@@ -67,12 +78,14 @@ const Login = () => {
         {loginError && (
           <p className="text-red text-center mb-2">{loginError}</p>
         )}
+        
         <p className="text-center pb-8">
           Do not have an account?{" "}
           <Link to={"/login"}>
             Register here
           </Link>
         </p>
+        
       </div>
     );
 };

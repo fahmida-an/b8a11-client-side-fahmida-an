@@ -7,6 +7,11 @@ export default {
   ],
   theme: {
     colors: {
+        green1: '#115e59',
+        teal: '#1b3942',
+        stone: '#fafaf9',
+        purple: '#faf5ff',
+        fuscia :'#fdf4ff',
         zinc: '#d4d4d8',
         zinc1: '#71717a',
         zinc2: '#52525b',

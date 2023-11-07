@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-const MyScheduleRow = ({bookService}) => {
+const MyScheduleRow = ({bookService, handleDelete}) => {
     const { _id,
         serviceImage,
         customerName,
@@ -8,13 +8,14 @@ const MyScheduleRow = ({bookService}) => {
         service,
         service_id,
         price
-
     
     } = bookService;
+
+   
     return (
         <tr>
         <th>
-          <button className="btn  btn-sm btn-square bg-red-500 ">
+          <button onClick={()=> handleDelete(_id)} className="btn  btn-sm btn-square bg-red-500 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -46,7 +47,7 @@ const MyScheduleRow = ({bookService}) => {
         </td>
         <td>{service}</td>
         <td>{price}</td>
-
+        <td>{date}</td>
       </tr>
     );
 };

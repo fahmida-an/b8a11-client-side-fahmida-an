@@ -15,7 +15,7 @@ const CheckOut = () => {
       if (checkServiceDetail) {
         setCheckServiceCard(checkServiceDetail);
       } else {
-        console.error(`Service with id ${id} not found.`);
+        console.log(console.error);
       }
     }, [id, checkService]);
   
@@ -54,63 +54,64 @@ const CheckOut = () => {
 
     }
     return (
-        <div>
-            <h1 className="text-3xl text-center py-8 ">Book Now</h1>
+      
+        <div className="max-w-xl mx-auto h-screen bg-white">
+            <h1 className="text-3xl text-center py-8 text-green1 font-bold ">Book Service Now</h1>
             <form onSubmit={handleCheckBookService} className="card-body">
-         <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
+         <div className="grid grid-cols-1 gap-3">
          <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-dark2 font-bold text-sm lg:text-xl">Name</span>
+                  <span className="label-text text-dark2 font-bold text-sm lg:text-lg">Name</span>
                 </label>
                 <input
                   type="text"
                   name="name"
                   defaultValue={user?.displayName}
-                  className="input input-bordered "
+                  className="input input-bordered text-sm "
                   required
                 />
               </div>
              <div className="form-control">
                <label className="label">
-                 <span className="label-text text-dark2 font-bold text-sm lg:text-xl">Email</span>
+                 <span className="label-text text-dark2 font-bold text-sm lg:text-lg">Email</span>
                </label>
                <input
                  type="email"
                  name="email"
                 defaultValue={user?.email}
-                 className="input input-bordered "
+                 className="input input-bordered text-sm "
                  required
                />
              </div>
              <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-dark2 font-bold text-sm lg:text-xl">Date</span>
+                  <span className="label-text text-dark2 font-bold text-sm lg:text-lg">Date</span>
                 </label>
                 <input
                   type="date"
                   name="date"
                   placeholder="Date"
-                  className="input input-bordered "
+                  className="input input-bordered text-sm "
                   required
                 />
               </div>
              <div className="form-control">
                <label className="label">
-                 <span className="label-text text-dark2 font-bold text-sm lg:text-xl">Due Amount</span>
+                 <span className="label-text text-dark2 font-bold text-sm lg:text-lg">Due Amount</span>
                </label>
                <input
                  type="text"
                  defaultValue={checkServiceCard?.price}
-                 className="input input-bordered "
+                 className="input input-bordered text-sm"
                  required
                />
              </div>
-         </div>
-         
-          
-             <div className="form-control mt-3">
-               <input className="btn font-bold" type="submit" value={'Confirm Service'} />
-             </div>
+
+             <input className="btn text-lg font-bold mt-3 text-white bg-gradient-to-r from-green1 via-green-500 to-teal-800 hover:bg-gradient-to-br" type="submit" value={'Confirm Service'} />
+         </div>       
+            
+               
+  
            </form>
         </div>
     );
