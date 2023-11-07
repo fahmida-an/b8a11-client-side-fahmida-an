@@ -49,7 +49,7 @@ const router = new createBrowserRouter([
         element: <PrivateRoutes><BookService></BookService></PrivateRoutes>
       },
       {
-        path: "/myServices",
+        path: "/manageServices",
         element: <PrivateRoutes><AllBookService></AllBookService></PrivateRoutes>
       }
     ],

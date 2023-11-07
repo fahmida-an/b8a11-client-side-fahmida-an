@@ -53,11 +53,7 @@ const NavBar = () => {
   
               {onDash && (
                 <div className="mt-7 transition absolute border shadow-xl w-52 text-center justify-center h-[180px] z-10 bg-neutral1 rounded-xl">
-                  <li className="mt-4 mb-2 p-2 hover:bg-zinc ">
-                    <Link to={"/myServices"} className="text-teal-900">
-                      My Services
-                    </Link>
-                  </li>
+                  
                   <li className="mb-2 p-2 hover:bg-zinc ro">
                     <Link to={"/addServices"} className=" text-teal-900">
                       Add Services
@@ -66,6 +62,12 @@ const NavBar = () => {
                   <li className=" p-2 hover:bg-zinc">
                     <Link to={"/bookServices"} className="text-teal-900">
                       My Schedules
+                    </Link>
+                  </li>
+
+                  <li className="mt-4 mb-2 p-2 hover:bg-zinc ">
+                    <Link to={"/manageServices"} className="text-teal-900">
+                      Manage Services
                     </Link>
                   </li>
                 </div>
