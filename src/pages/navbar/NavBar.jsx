@@ -74,7 +74,7 @@ const NavBar = () => {
               )}
             </li>
             <div className="flex gap-2">
-            <img onClick={() => setClickImg(!clickImg)} className="w-12 h-12 rounded-full border-green1 border-2 inline-block cursor-pointer relative" src={user.photoURL} alt="" />
+            <img onClick={() => setClickImg(!clickImg)} className="w-12 h-12 rounded-full border-green-500 border-2 inline-block cursor-pointer relative" src={user.photoURL} alt="" />
             {
               clickImg &&
               <div className="mt-16 ml-3 transition absolute border shadow-xl w-60 text-center justify-center h-[130px] z-10 bg-neutral1 rounded-xl">

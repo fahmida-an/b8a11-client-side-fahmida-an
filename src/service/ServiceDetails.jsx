@@ -59,6 +59,15 @@ const ServiceDetails = () => {
          </div>
           <p className="mt-4 text-md px-16">{serviceCard.details}</p>
 
+
+          <div className="flex items-center justify-center mt-8">
+            <img className="w-40 h-40" src={serviceCard.providerImage} alt="" />
+          </div>
+          <div className="px-16 mt-8 font-bold">
+            <p>Provider Location: <span>{serviceCard.providerLocation}</span></p>
+            <p>About Provider: <span className="font-normal">{serviceCard.providerDescription}</span></p>
+          </div>
+
          
 
           <div className=" grid grid-cols-2 max-w-2xl mx-auto py-10">
