@@ -16,7 +16,7 @@ const ClientReview = () => {
       <p className="text-center font-bold mt-3">Arisha jahan</p>
       </div>
      
-      <div className=" w-64 h-72 bg-yellow-100 rounded-xl  ">
+      <div className=" w-64 h-72 bg-yellow-50 rounded-xl  ">
         <p className="py-20 px-2 font-rancho text-sm"> &apos;&apos;Thrilled with the drone service! Exceptional aerial shots, professional team. Elevated our projects. Highly recommended! &apos;&apos;</p>
       </div>
     </div>
@@ -26,7 +26,7 @@ const ClientReview = () => {
       <p className="text-center font-bold mt-3">Maha Alam</p>
       </div>
      
-      <div className=" w-64 h-72 bg-yellow-100 rounded-xl ">
+      <div className=" w-64 h-72 bg-yellow-50 rounded-xl ">
         <p className="py-20 px-2 font-rancho text-sm"> &apos;&apos;Virtual headset is a game-changer! Immersive experiences, stunning visuals, and endless possibilities. A must-have for tech enthusiasts. &apos;&apos;</p>
       </div>
      </div>
@@ -36,7 +36,7 @@ const ClientReview = () => {
       <p className="text-center font-bold mt-3">Liana Ahmed</p>
       </div>
      
-      <div className=" w-64 h-72 bg-yellow-100 rounded-xl ">
+      <div className=" w-64 h-72 bg-yellow-50 rounded-xl ">
         <p className="py-20 px-2 font-rancho text-sm"> &apos;&apos;Outstanding camera service! Quality gear, expert advice, and seamless transactions. Perfect for photographers and videographers &apos;&apos;</p>
       </div>
       </div>
@@ -46,7 +46,7 @@ const ClientReview = () => {
       <p className="text-center font-bold mt-3">Aysha Begum</p>
       </div>
      
-      <div className=" w-64 h-72 bg-yellow-100 rounded-xl ">
+      <div className=" w-64 h-72 bg-yellow-50 rounded-xl ">
         <p className="py-20 px-2 font-rancho text-sm"> &apos;&apos;Wow! These headphones are incredible. The sound quality is top-notch, and they are so comfortable to wear for extended periods. I&apos;m truly impressed with the value for the price. &apos;&apos;</p>
       </div>
      </div>
