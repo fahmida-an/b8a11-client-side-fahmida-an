@@ -1,3 +1,5 @@
+import { Footer } from "flowbite-react";
+import ClientReview from "../../pages/ExtraSection/ClientReview";
 import NewServiceBanner from "../../pages/ExtraSection/NewServiceBanner";
 import SaleSection from "../../pages/ExtraSection/SaleSection";
 import Banner from "../../pages/banner/Banner";
@@ -12,6 +14,8 @@ const Home = () => {
             <Services></Services>
             <NewServiceBanner></NewServiceBanner>
             <SaleSection></SaleSection>
+            <ClientReview></ClientReview>
+            <Footer></Footer>
             
         </div>
     );
