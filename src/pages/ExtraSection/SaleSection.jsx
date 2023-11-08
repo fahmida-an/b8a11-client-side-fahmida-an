@@ -9,7 +9,7 @@ const SaleSection = () => {
             className="w-[500px] h-[400px] rounded-lg shadow-2xl"
           />
           <div className="text-center">
-            <h1 className="py-6 font-bold text-2xl text-yellow-600">
+            <h1 className="py-6 font-bold lg:text-2xl text-lg text-yellow-600">
             Capture the savings! <br />
              our camera section for <br />
              exclusive discounts on photography gear.

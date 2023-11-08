@@ -38,7 +38,7 @@ const ServiceDetails = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-10">
         <div className="lg:col-span-2 border-r-2">
           <img
-            className="h-[300px] lg:w-[900px] lg:px-16 lg:h-[400px] mb-10"
+            className="h-[300px] lg:w-[900px] px-16 lg:h-[400px] mb-10"
             src={serviceCard.serviceImage}
             alt=""
           />
@@ -64,14 +64,15 @@ const ServiceDetails = () => {
             <img className="w-40 h-40" src={serviceCard.providerImage} alt="" />
           </div>
           <div className="px-16 mt-8 font-bold">
-            <p>Provider Location: <span>{serviceCard.providerLocation}</span></p>
+            <p>Email: <span className="font-normal">{serviceCard.providerEmail}</span></p>
+            <p>Provider Location: <span className="font-normal">{serviceCard.providerLocation}</span></p>
             <p>About Provider: <span className="font-normal">{serviceCard.providerDescription}</span></p>
           </div>
 
          
 
-          <div className=" grid grid-cols-2 max-w-2xl mx-auto py-10">
-        <div className="block w-72 p-6 mt-4 bg-red1 border border-t-green1 border-gray-200 rounded-lg shadow hover:bg-white ">
+          <div className=" grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:max-w-2xl lg:mx-auto py-10 ">
+        <div className="block w-72 mx-auto p-6 mt-4 bg-red1 border border-t-green1 border-gray-200 rounded-lg shadow hover:bg-white ">
           <h5 className="mb-2 text-lg font-bold tracking-tight text-zinc4">
             Instant Services
           </h5>
@@ -81,7 +82,7 @@ const ServiceDetails = () => {
           </p>
         </div>
 
-        <div className="block w-72 p-6 mt-4 bg-red1 border border-t-green1 border-gray-200 rounded-lg shadow hover:bg-white ">
+        <div className="block w-72 mx-auto p-6 mt-4 bg-red1 border border-t-green1 border-gray-200 rounded-lg shadow hover:bg-white ">
           <h5 className="mb-2 text-lg font-bold tracking-tight text-zinc4 ">
             24/7 Quality Service
           </h5>
@@ -90,7 +91,7 @@ const ServiceDetails = () => {
           </p>
         </div>
 
-        <div className="block w-72 p-6 mt-4 bg-red1 border border-t-green1 border-gray-200 rounded-lg shadow hover:bg-white ">
+        <div className="block w-72 mx-auto p-6 mt-4 bg-red1 border border-t-green1 border-gray-200 rounded-lg shadow hover:bg-white ">
           <h5 className="mb-2 text-lg font-bold tracking-tight text-zinc4">
             Easy Customer Services
           </h5>
@@ -98,7 +99,7 @@ const ServiceDetails = () => {
           Simplify Your Experience with Our Easy Customer Services.
           </p>
         </div>
-        <div className="block w-72 p-6 mt-4 bg-red1 border border-t-green1 border-gray-200 rounded-lg shadow hover:bg-white ">
+        <div className="block w-72 mx-auto p-6 mt-4 bg-red1 border border-t-green1 border-gray-200 rounded-lg shadow hover:bg-white ">
           <h5 className="mb-2 text-lg font-bold tracking-tight text-zinc4 ">
             Quality Cost Services
           </h5>

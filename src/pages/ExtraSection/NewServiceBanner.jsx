@@ -8,7 +8,7 @@ const NewServiceBanner = () => {
             <section className="bg-[#fef2f2]">
 	<div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
 		<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg ">
-			<h1 className="text-6xl font-bold sm:text-4xl"> New Drone Service
+			<h1 className="lg:text-6xl font-bold text-3xl"> New Drone Service <br />
 				<span className="text-yellow-400">Available!!</span>
 			</h1>
 			<p className="mt-6 mb-8 text-lg sm:mb-12">Introducing our cutting-edge drone service, revolutionizing 

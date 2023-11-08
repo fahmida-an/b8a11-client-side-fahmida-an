@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import useServices from "../../hooks/useServices";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import swal from "sweetalert";
 import axios from "axios";
 
 const CheckOut = () => {
@@ -35,6 +36,9 @@ const CheckOut = () => {
             email,
             serviceImage: checkServiceCard.serviceImage,
             date,
+            providerName: checkServiceCard.providerName,
+            providerEmail: checkService.providerEmail,
+            providerLocation: checkServiceCard.providerLocation,
             service: checkServiceCard.serviceName,
             service_id: checkServiceCard._id,
             price: checkServiceCard.price
@@ -42,11 +46,12 @@ const CheckOut = () => {
         }
        console.log(bookServices);
 
-       axios.post('http://localhost:4000/bookServices',bookServices)
+       axios.post('https://b8a11-server-side-fahmida-an.vercel.app/bookServices',bookServices)
        .then(data => {
         console.log(data.data);
         if(data.data.insertedId){
           console.log('data added');
+          swal("Successfully", "Data Added", "success");
           
         }
     })
@@ -68,6 +73,7 @@ const CheckOut = () => {
                   name="name"
                   defaultValue={user?.displayName}
                   className="input input-bordered text-sm "
+                  readOnly
                   required
                 />
               </div>
@@ -80,6 +86,7 @@ const CheckOut = () => {
                  name="email"
                 defaultValue={user?.email}
                  className="input input-bordered text-sm "
+                 readOnly
                  required
                />
              </div>
@@ -104,6 +111,7 @@ const CheckOut = () => {
                  defaultValue={checkServiceCard?.price}
                  className="input input-bordered text-sm"
                  required
+                 readOnly
                />
              </div>
 

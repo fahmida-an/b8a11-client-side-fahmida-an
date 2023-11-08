@@ -10,11 +10,15 @@ import CheckOut from "../pages/CheckOut/CheckOut";
 import BookService from "../BookService/BookService";
 import AllBookService from "../AllBookService/AllBookService";
 import PrivateRoutes from "./PrivateRoutes";
+import ManageAllService from "../service/ManageAllService";
+import UpdateService from "../service/updateService";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = new createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -51,6 +55,14 @@ const router = new createBrowserRouter([
       {
         path: "/manageServices",
         element: <PrivateRoutes><AllBookService></AllBookService></PrivateRoutes>
+      },
+      {
+        path: "/manageAllServices",
+        element: <PrivateRoutes><ManageAllService></ManageAllService></PrivateRoutes>
+      },
+      {
+        path: "/services/update/:id",
+        element: <PrivateRoutes><UpdateService></UpdateService></PrivateRoutes>
       }
     ],
   },

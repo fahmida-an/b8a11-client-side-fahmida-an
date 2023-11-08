@@ -6,7 +6,7 @@ import axios from "axios";
 const BookService = () => {
     const {user} = useContext(AuthContext);
     const[bookServices, setBookServices] = useState([]);
-    const url = `http://localhost:4000/bookServices?email=${user?.email}`;
+    const url = `https://b8a11-server-side-fahmida-an.vercel.app/bookServices?email=${user?.email}`;
     useEffect(() => {
     axios.get(url, {withCredentials: true})
     .then(res => {
@@ -22,7 +22,7 @@ const BookService = () => {
 const handleDelete = id => {
   const proceed = confirm('Are you sure you want to delete')
   if(proceed){
-      fetch(`http://localhost:4000/bookServices/${id}`, {
+      fetch(`https://b8a11-server-side-fahmida-an.vercel.app/bookServices/${id}`, {
         method: 'DELETE'
       })
       .then(res => res.json())
@@ -38,21 +38,19 @@ const handleDelete = id => {
   }
 }
     return (
-        <div>
-            <h2>My Schedule {bookServices.length}</h2>
+        <div className="bg-white shadow-2xl max-w-5xl mx-auto ">
+            <h2 className="py-8 font-bold text-3xl text-green1 text-center">My Schedule</h2>
             <div className="overflow-x-auto">
   <table className="table">
-    {/* head */}
-    <thead>
+    <thead className="font-bold text-black">
       <tr>
-        <th>
-         
-        </th>
-        <th>Image</th>
+        <th></th>
+        <th>Provider Name</th>
+        <th>Provider Email</th>
         <th>Service</th>
-        <th>Price</th>
+        <th>Price: $ </th>
         <th>Date</th>
-        <th>Status</th>
+        <th>Operation</th>
       </tr>
     </thead>
     <tbody>

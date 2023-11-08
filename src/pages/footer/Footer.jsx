@@ -1,7 +1,8 @@
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-green1 text-white rounded">
+       <div>
+         <footer className="lg:footer lg:footer-center lg:p-10 lg:bg-green1 lg:text-white lg:rounded hidden">
         <nav className="grid grid-flow-col gap-4">
           <a className="link link-hover">About us</a> 
           <a className="link link-hover">Contact Us</a> 
@@ -19,6 +20,7 @@ const Footer = () => {
           <p>Copyright © 2023 - All right reserved by Tech Gadget Hub</p>
         </aside>
       </footer>
+       </div>
     );
 };
 

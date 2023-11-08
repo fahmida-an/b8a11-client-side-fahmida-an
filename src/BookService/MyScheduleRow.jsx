@@ -7,15 +7,36 @@ const MyScheduleRow = ({bookService, handleDelete}) => {
         date,
         service,
         service_id,
-        price
+        price,
+        providerName,
+        providerEmail
     
     } = bookService;
 
    
     return (
         <tr>
+        <td>
+          <div className="flex items-center space-x-3">
+            <div className="avatar">
+              <div className="rounded w-24 h-24">
+                {serviceImage && <img src={serviceImage} alt="" />}
+              </div>
+            </div>
+            <div>
+              <div className="font-bold">{customerName}</div>
+              <div className="text-sm opacity-50">{email}</div>
+            </div>
+          </div>
+        </td>
+        <td>{providerName}</td>
+        <td>{providerEmail}</td>
+        <td>{service}</td>
+        <td>${price}</td>
+        <td className="text-red-400">{date}</td>
+
         <th>
-          <button onClick={()=> handleDelete(_id)} className="btn  btn-sm btn-square bg-red-500 ">
+          <button onClick={()=> handleDelete(_id)} className="btn  btn-sm btn-square bg-yellow-200 text-red-700 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -32,22 +53,6 @@ const MyScheduleRow = ({bookService, handleDelete}) => {
             </svg>
           </button>
         </th>
-        <td>
-          <div className="flex items-center space-x-3">
-            <div className="avatar">
-              <div className="rounded w-24 h-24">
-                {serviceImage && <img src={serviceImage} alt="" />}
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">{customerName}</div>
-              <div className="text-sm opacity-50">{email}</div>
-            </div>
-          </div>
-        </td>
-        <td>{service}</td>
-        <td>{price}</td>
-        <td>{date}</td>
       </tr>
     );
 };

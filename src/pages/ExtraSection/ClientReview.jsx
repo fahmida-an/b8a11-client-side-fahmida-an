@@ -3,7 +3,7 @@ import profile2 from "../../assets/images/pr2.jpg"
 import profile3 from "../../assets/images/pr3.jpg"
 const ClientReview = () => {
     return (
-        <div className="mt-5 h-[600px]">
+        <div className="py-5 h-[600px]">
             <p className=" text-center text-sm pb-4 uppercase text-yellow-400 font-bold">testimonial</p>
             <h2 className=" text-4xl text-teal-900 text-center font-bold mb-8">What Client Say</h2>
 

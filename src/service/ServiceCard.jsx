@@ -27,7 +27,7 @@ const ServiceCard = ({ service }) => {
             <p className="">
               {details.slice(0, 100)}
 
-              <Link className="text-green-500 ml-1">
+              <Link to={`/services/${_id}`} className="text-green-500 ml-1">
                 Read more...
               </Link>
             </p>
@@ -35,18 +35,18 @@ const ServiceCard = ({ service }) => {
             <p>{details}</p>
           )}
 
-          <p className="font-bold py-1">Price: ${price}</p>
+          <p className="font-bold py-1 text-yellow-400">Price: ${price}</p>
 
-          <div className="flex items-center justify-between py-2">
+          <div className="flex items-center justify-between py-2 gap-3">
           <img className="w-14 h-14 rounded-full border-green-500 border-2" src={providerImage} alt="" />
           <div className="flex flex-col text-sm">
-          <p>Service Provider</p>
+          <p className="font-bold">Service Provider</p>
           <p className="text-green-500">{providerName}</p>
           <p className="">Location : {providerLocation}</p>
           </div>
           <div className="mt-8">
           <Link to={`/services/${_id}`}>
-          <button className="text-white bg-gradient-to-r  from-green1 via-green-500 to-teal-800 hover:bg-gradient-to-br outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">View details</button>
+          <button className="text-white bg-gradient-to-r  from-green1 via-green-500 to-teal-800 hover:bg-gradient-to-br outline-none rounded-lg text-sm px-3 py-2.5 text-center mr-2 mb-2">Details</button>
           </Link>
           </div>
           </div>

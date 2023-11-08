@@ -1,4 +1,4 @@
-const AllBookScheduleRow = ({bookService, handleBookingsApprove}) => {
+const AllBookScheduleRow = ({bookService, handleBookingsApprove, handleDelete}) => {
 
     const {
         _id,
@@ -9,12 +9,33 @@ const AllBookScheduleRow = ({bookService, handleBookingsApprove}) => {
         service,
         service_id,
         price,
-        status
+        status,
+        providerEmail,
+        providerName
       } = bookService;
     return (
         <tr>
+        <td>
+          <div className="flex items-center space-x-3">
+            <div className="avatar">
+              <div className="rounded w-24 h-24">
+                {serviceImage && <img src={serviceImage} alt="" />}
+              </div>
+            </div>
+            <div>
+              <div className="font-bold">{customerName}</div>
+              <div className="text-sm opacity-50">{email}</div>
+            </div>
+          </div>
+        </td>
+        <td>{service}</td>
+        <td>{providerName}</td>
+        <td>{providerEmail}</td>
+        <td>{price}</td>
+        <td>{date}</td>
+
         <th>
-          <button className="btn  btn-sm btn-square bg-red-500 ">
+          <button onClick={()=> {handleDelete(_id)}} className="btn  btn-sm btn-square bg-yellow-400 text-red-600 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -31,23 +52,6 @@ const AllBookScheduleRow = ({bookService, handleBookingsApprove}) => {
             </svg>
           </button>
         </th>
-        <td>
-          <div className="flex items-center space-x-3">
-            <div className="avatar">
-              <div className="rounded w-24 h-24">
-                {serviceImage && <img src={serviceImage} alt="" />}
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">{customerName}</div>
-              <div className="text-sm opacity-50">{email}</div>
-            </div>
-          </div>
-        </td>
-        <td>{service}</td>
-        <td>{email}</td>
-        <td>{price}</td>
-        <td>{date}</td>
 
         <th>
           {

@@ -52,7 +52,7 @@ const NavBar = () => {
               </div>
   
               {onDash && (
-                <div className="mt-7 transition absolute border shadow-xl w-52 text-center justify-center h-[180px] z-10 bg-neutral1 rounded-xl">
+                <div className="mt-7 transition absolute border shadow-xl w-52 text-center justify-center h-[200px] z-10 bg-neutral1 rounded-xl">
                   
                   <li className="mb-2 p-2 hover:bg-zinc ro">
                     <Link to={"/addServices"} className=" text-teal-900">
@@ -67,9 +67,16 @@ const NavBar = () => {
 
                   <li className="mt-4 mb-2 p-2 hover:bg-zinc ">
                     <Link to={"/manageServices"} className="text-teal-900">
-                      Manage Services
+                      Manage Book Services
                     </Link>
                   </li>
+                  <li className="mt-4 mb-2 p-2 hover:bg-zinc ">
+                    <Link to={"/manageAllServices"} className="text-teal-900">
+                      Manage All Services
+                    </Link>
+                  </li>
+
+
                 </div>
               )}
             </li>
@@ -128,6 +135,16 @@ const NavBar = () => {
                       My Schedules
                     </Link>
                   </li> 
+
+                  <li>
+                  <Link to={"/manageAllServices"} className="w-full py-5 text-center justify-start px-3 border inline-block hover:bg-zinc text-teal-900">
+                      Manage All Services
+                    </Link>
+                  </li>
+
+                  <li>
+                  <button onClick={handleLogout} className="w-full text-white bg-gradient-to-r from-green1 via-green-500 to-teal-800 hover:bg-gradient-to-br outline-none font-medium  px-5 py-3 text-center mr-2 mt-2 mb-2">Log Out</button>
+                  </li>
                 </>
 
                 :<>

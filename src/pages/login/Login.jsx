@@ -22,7 +22,7 @@ const Login = () => {
             console.log(loggedInUser);
             const user = {email};
       
-            axios.post('http://localhost:4000/jwt', user, {withCredentials: true})
+            axios.post('https://b8a11-server-side-fahmida-an.vercel.app/jwt', user, {withCredentials: true})
             .then(res => {
               console.log(res.data);
               if(res.data.success){

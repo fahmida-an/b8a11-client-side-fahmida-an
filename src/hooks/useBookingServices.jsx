@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useBookingServices = () => {
     const [bookServices, setBookServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4000/services')
+        fetch('https://b8a11-server-side-fahmida-an.vercel.app/services')
         .then(res => res.json())
         .then(data => setBookServices(data))
     }, [])

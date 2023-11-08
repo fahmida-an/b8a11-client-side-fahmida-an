@@ -1,8 +1,16 @@
-# React + Vite
+# Tech Gadget Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## [ Visit Our Website ](https://tech-gadget-hub.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Celebrations withDreamTeam is an offline service provider website where anyone can get booked services.
+
+`Project Features:`
+- Email Login and Registration Authentication
+- Google Login Authentication 
+- Private Route 
+- User can booked service
+- User cann get all the service
+- Seven service available
+- User can update, delete service order

@@ -1,7 +1,9 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 
 const AddService = () => {
-
+    const navigate = useNavigate();
     const handleAddServices = event => {
         event.preventDefault();
         const form = new FormData(event.currentTarget);
@@ -10,21 +12,26 @@ const AddService = () => {
         const price = form.get('price')
         const providerName = form.get('providerName')
         const providerImage = form.get('providerImage')
+        const providerEmail = form.get('providerEmail')
         const providerLocation = form.get('providerLocation')
         const providerDescription = form.get('providerDescription')
         const details = form.get('details')
-        const newService = {serviceImage, serviceName, price, providerName,providerImage, providerLocation, providerDescription, details}
+        const newService = {serviceImage, serviceName, price, providerName,providerImage, providerEmail, providerLocation, providerDescription, details}
         console.log(newService);
 
         // send services to server
 
-        axios.post('http://localhost:4000/services', newService)
+        axios.post('https://b8a11-server-side-fahmida-an.vercel.app/services', newService)
         .then(data => {
           console.log(data.data);
           if(data.data.insertedId){
             console.log('data added');
+            swal("Successfully", "Service Data Added", "success");
+            navigate('/allServices')
+           
             
           }
+          form.reset()
           
         })
 
@@ -103,6 +110,20 @@ const AddService = () => {
                 type="text"
                 name="providerImage"
                 placeholder="Provider Image"
+                className="input input-bordered text-sm w-full focus:ring-zinc2 focus:border-zinc4"
+                required
+              />
+            </label>
+          </div>
+          <div className="form-control px-8">
+            <label className="label">
+              <span className="label-text">Provider Email</span>
+            </label>
+            <label className="input-group">
+              <input
+                type="email"
+                name="providerEmail"
+                placeholder="Provider Email"
                 className="input input-bordered text-sm w-full focus:ring-zinc2 focus:border-zinc4"
                 required
               />
