@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import axios from "axios";
+// import axios from "axios";
 import {AiOutlineGoogle} from "react-icons/ai"
 
 const Login = () => {
@@ -17,19 +17,10 @@ const Login = () => {
         console.log(email, password);
 
         logInUser(email, password)
-        .then(result => {
-            const loggedInUser = result.user;
-            console.log(loggedInUser);
-            const user = {email};
-      
-            axios.post('https://b8a11-server-side-fahmida-an.vercel.app/jwt', user, {withCredentials: true})
-            .then(res => {
-              console.log(res.data);
-              if(res.data.success){
-                navigate( location?.state ? location.state : '/')
-              }
-            })
-        })
+        .then(result => 
+          console.log(result),
+          navigate('/')
+        )     
         .catch(error => {
             setLoginError(error.message);
         })
